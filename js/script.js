@@ -15,10 +15,29 @@ function reset() {
 }
 
 // Challenge 2: Cat Generator
-
 function generateCat() {
     var image = document.createElement('img');
     var div = document.getElementById('flex-cat-gen');
     image.src = "http://thecatapi.com/api/images/get?format=src&type=gif&size=small";
     div.appendChild(image)
+}
+
+// Challenge 3: Roc, Paper, Scissors
+function rpsGame(yourChoice) {
+    console.log(yourChoice);
+    var humanChoice, botChoice;
+    // humanChoice = yourChoice.id;
+    botChoice = numberToChoice(randToRpsInt());
+    // console.log(botChoice);
+    // results = decideWinner(humanChoice, botChoice); // [0, 1] human lost | bot won;
+    // message = finalMessage(results); // {'message': 'You won!', 'color': 'green'}
+    // rpsFrontEnd(yourChoice.id, botChoice, message);
+}
+
+function randToRpsInt() {
+    return Math.floor(Math.random() * 3);
+}
+
+function numberToChoice(number) {
+    return ['rock', 'paper', 'scissors'][number]
 }
