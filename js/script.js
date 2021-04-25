@@ -26,10 +26,11 @@ function generateCat() {
 function rpsGame(yourChoice) {
     console.log(yourChoice);
     var humanChoice, botChoice;
-    // humanChoice = yourChoice.id;
+    humanChoice = yourChoice.id;
     botChoice = numberToChoice(randToRpsInt());
-    console.log(botChoice);
-    // results = decideWinner(humanChoice, botChoice); // [0, 1] human lost | bot won;
+    console.log('computer choice:', botChoice);
+    results = decideWinner(humanChoice, botChoice); // [0, 1] human lost | bot won;
+    console.log(results)
     // message = finalMessage(results); // {'message': 'You won!', 'color': 'green'}
     // rpsFrontEnd(yourChoice.id, botChoice, message);
 }
@@ -47,9 +48,10 @@ function decideWinner(yourChoice, computerChoice) {
         'rock': {'scissors': 1, 'rock': 0.5, 'paper': 0},
         'paper': {'rock': 1, 'paper': 0.5, 'scissors': 0},
         'scissors': {'paper': 1, 'scissors': 0.5, 'rock': 0}
-    }
+    };
 
     var yourScore = rpsDatabase[yourChoice][computerChoice];
     var computerScore = rpsDatabase[computerChoice][yourChoice];
+
     return [yourScore][computerScore];
 }
