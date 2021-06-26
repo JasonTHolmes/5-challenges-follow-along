@@ -69,3 +69,10 @@ function finalMessage([yourScore, computerScore]) {
         return {'message': 'You won!', 'color': 'green'}
     }
 }
+
+function rpsFrontEnd(humanImageChoice, botImageChoice, finalMessage) {
+    var imagesDatabase = {
+        'rock': document.getElementById('rock').src
+
+    }
+}
