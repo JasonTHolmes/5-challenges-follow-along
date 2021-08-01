@@ -15,7 +15,6 @@ function reset() {
 }
 
 // Challenge 2: Cat Generator
-
 function generateCat() {
     var image = document.createElement('img');
     var div = document.getElementById('flex-cat-gen');
